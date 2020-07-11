@@ -2,25 +2,9 @@
 
 ## Setup
 Sample docker-compose to start your own code-server! 
+
 Change, your PUID, GUID to your user, change the volume and run a ```docker-compose up -d``` in the same directory as your docker-compose.yml and go to $ip:5443! That's it!
 
-```
----
-version: "3"
-services:
-  code-server:
-    image: vincentchu37/code-server:latest
-    container_name: code-server
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/Chicago
-    volumes:
-      - /home/vincent/code:/home/coder/
-    ports:
-      - 5443:8080
-    restart: unless-stopped
-```
 
 FAQ: 
 1. What is the PUID and GUID? That's the user id and group id of the user that your want to mount your volume in. In the example docker-compose user 'vincent' would have the user id of 1000 and group id 1000. So if you want to pass a directory owned by bob, do a ```id``` and change the PUID and PGID to his id.
