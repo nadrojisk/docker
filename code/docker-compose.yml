@@ -2,7 +2,7 @@
 version: "3"
 services:
   code-server:
-    image: vincentchu37/code-server:latest
+    build: "."
     container_name: code-server
     environment:
       - PUID=1000
