@@ -1,0 +1,15 @@
+---
+version: "3"
+services:
+  code-server:
+    image: vincentchu37/code-server:latest
+    container_name: code-server
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+    volumes:
+      - /home/nadrojisk/code:/home/coder/
+    ports:
+      - 5443:8080
+    restart: unless-stopped
